@@ -7,7 +7,7 @@
     <meta name="keywords" content="HTML, JavaScript, CSS">
     <meta name="description" content="Free Web tutorials">
     <meta name="author" content="Jakir Hossain">
-    <title>JavaScript To-Do App</title>
+    <title>JS To-Do App</title>
     <!-- fontawsome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <!-- custom css style link -->
@@ -15,8 +15,58 @@
 </head>
 <body>
     <header>
-        <h2>JavaScript To-do App</h2>
+        <h2>JS To-Do App</h2>
         <i class="fa-solid fa-moon"></i>
     </header>
+    <main>
+        <!-- create task start -->
+        <div class="create-task" id="create-task">
+            <button class="create-task-btn"><i class="fa-solid fa-plus"></i>Create new task</button>
+        </div>
+        <div class="creat-task-popup" id="creat-task-popup">
+            <h2 id="popup-heading"></h2>
+            <i id="close-popup"class="fas fa-times"></i>
+            <div class="input-box">
+                <input id="task-name" type="text" placeholder="Enter task name">
+                <textarea name="description" id="task-description" placeholder="Enter task description"></textarea>
+                <input id="add-task" class="default-btn" type="submit" value="Add task">
+            </div>
+        </div>
+        <!-- create task ends -->
+
+        <!-- incomplete task start -->
+        <h3 class="heading">Incomplete task</h3>
+        <div class="tasks" id="incomplete-tasks">
+            <div class="task incitem" id="inc-task">
+                <div class="task-details">
+                    <p id="task-title">Lorem ipsum dolor sit amet consectetur.</p>
+                    <p id="task-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, repellendus?</p>
+                </div>
+                <div class="task-action">
+                    <button class="default-btn complete-btn">Complete</button>
+                    <button class="default-btn edit-btn">Edit</button>
+                    <button class="default-btn delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+        <!-- incomplete task ends -->
+
+        <!-- complete task start -->
+        <h3 class="heading">Complete task</h3>
+        <div class="tasks" id="complete-tasks">
+            <div class="task" id="com-task">
+                <div class="task-details">
+                    <p>Task name</p>
+                    <p>Task discription</p>
+                </div>
+                <div class="task-action">
+                    <button class="default-btn incomplete-btn">Mark Incomplete</button>
+                    <button class="default-btn delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+        <!-- complete task ends -->
+    </main>
+    <script type="module" src="./main.js"></script>
 </body>
 </html>
