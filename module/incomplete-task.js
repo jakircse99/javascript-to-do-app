@@ -1,5 +1,6 @@
 // incomplete task
 import completeTask from "./complete-task.js";
+import editDisplayPopup from "./edit-popup.js";
 // import editAction from "./edit-task.js";
 
 function incompleteTask () {
@@ -24,6 +25,7 @@ function incompleteTask () {
     incompleteList.appendChild(taskItem);
 
     bindInComplete(taskItem, completeTask);
+    bindEditTask(taskItem, editDisplayPopup);
 
     // binding incomplete
     function bindInComplete(taskItem, completeTask) {
@@ -33,8 +35,11 @@ function incompleteTask () {
 
     }
 
-    // edit action for incomplete task
-    // editAction (taskItem.querySelectorAll(".edit-btn"));
+    // binding edit
+    function bindEditTask(taskItem, editDisplayPopup) {
+        let editBtn = taskItem.querySelector(".edit-btn");
+        editBtn.onclick = editDisplayPopup;
+    }
 
 
 }

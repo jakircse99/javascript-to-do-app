@@ -1,16 +1,10 @@
-// //import modules
+// edit task
 
-// import displayPopup from "./popup.js";
+// import editDisplayPopup from "./edit-popup.js";
 
-
-// function editAction (editBtn, heading) {
-
-    
-//     for (let i = 0; i < editBtn.length; i++) {
-//         displayPopup(editBtn[i], heading);
-//         console.log("ok");
-//     }
+// function editTask() {
+//     editDisplayPopup(this);
 // }
 
-// export default editAction;
+// export default editTask;
 

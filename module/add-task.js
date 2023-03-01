@@ -1,7 +1,9 @@
 import displayPopup from "./add-popup.js";
 import completeTask from "./complete-task.js";
+import editDisplayPopup from "./edit-popup.js";
 
 let defaultIncTask = document.querySelector(".incitem");
+
 
 // create task with popup
 
@@ -38,7 +40,9 @@ function addTask () {
 
         // bind incomplete task with completetask
         bindInComplete(taskItem, completeTask);
+        bindEditTask(taskItem, editDisplayPopup);
     }
+
     // binding incomplete
     function bindInComplete(taskItem, completeTask) {
         
@@ -46,8 +50,20 @@ function addTask () {
         completBtn.onclick = completeTask;
 
     }
+    // binding edit
+    function bindEditTask(taskItem, editDisplayPopup) {
+        
+        let editBtn = taskItem.querySelector(".edit-btn");
+        editBtn.onclick = editDisplayPopup;
+
+    }
+
+
     // for default task
     bindInComplete(defaultIncTask, completeTask);
+    bindEditTask(defaultIncTask, editDisplayPopup);
+
+
 
     displayPopup();
 
