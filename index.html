@@ -8,9 +8,9 @@
     <meta name="description" content="Free Web tutorials">
     <meta name="author" content="Jakir Hossain">
     <title>JS To-Do App</title>
-    <!-- fontawsome cdn link -->
+    <!----------- fontawsome cdn link ----------->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
-    <!-- custom css style link -->
+    <!----------- custom css style link --------->
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -19,7 +19,8 @@
         <i class="fa-solid fa-moon"></i>
     </header>
     <main>
-        <!-- create task start -->
+
+        <!-------- create task start -------->
         <div class="create-task" id="create-task">
             <button class="create-task-btn"><i class="fa-solid fa-plus"></i>Create new task</button>
         </div>
@@ -32,10 +33,9 @@
                 <input id="add-task" class="default-btn" type="submit" value="Add task">
             </div>
         </div>
-        <!-- create task ends -->
+        <!--------- create task ends --------->
 
-        <!-- edit task start -->
-        
+        <!--------- edit task start ---------->
         <div class="edit-task-popup" id="edit-task-popup">
             <h2 id="popup-heading">Edit task</h2>
             <i id="edit-close-popup"class="fas fa-times"></i>
@@ -45,9 +45,9 @@
                 <input id="edit-task" class="default-btn" type="submit" value="Edit Task">
             </div>
         </div>
-        <!-- edit task ends -->
+        <!-------- edit task ends ----------->
 
-        <!-- incomplete task start -->
+        <!-------- incomplete task start --------->
         <h3 class="heading">Incomplete task</h3>
         <div class="tasks" id="incomplete-tasks">
             <div class="task incitem" id="inc-task">
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <!-- incomplete task ends -->
+        <!------- incomplete task ends ------->
 
         <!-- complete task start -->
         <h3 class="heading">Complete task</h3>
@@ -78,7 +78,8 @@
                 </div>
             </div>
         </div>
-        <!-- complete task ends -->
+        <!------- complete task ends -------->
+        
     </main>
     <script type="module" src="./main.js"></script>
 </body>

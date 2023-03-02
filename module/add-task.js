@@ -1,11 +1,14 @@
+// import module
 import displayPopup from "./add-popup.js";
 import completeTask from "./complete-task.js";
 import editDisplayPopup from "./edit-popup.js";
+import deleteTask from "./delete-task.js";
 
+// default incomplete task
 let defaultIncTask = document.querySelector(".incitem");
 
 
-// create task with popup
+// create task with popup display
 
 function addTask () {
     // declare necessary variable
@@ -15,7 +18,7 @@ function addTask () {
     let incompleteList = document.querySelector("#incomplete-tasks");
 
 
-    // function for create task
+    // function for create new task
     let createTask = function (name, description) {
         let newTaskItem = document.createElement("div");
         newTaskItem.classList.add('task');
@@ -31,6 +34,7 @@ function addTask () {
     return newTaskItem;
     }
 
+    // add task item to incomplete list
     let addTaskItem = function (ev) {
         ev.preventDefault();
         let taskItem = createTask(taskName.value, taskDescription.value);
@@ -38,12 +42,14 @@ function addTask () {
         taskName.value = "";
         taskDescription.value = "";
 
-        // bind incomplete task with completetask
+        // bind complete , edit, delete 
         bindInComplete(taskItem, completeTask);
         bindEditTask(taskItem, editDisplayPopup);
+        bindDeleteTask(taskItem, deleteTask);
+
     }
 
-    // binding incomplete
+    // binding incomplete and complete
     function bindInComplete(taskItem, completeTask) {
         
         let completBtn = taskItem.querySelector(".complete-btn");
@@ -58,16 +64,23 @@ function addTask () {
 
     }
 
+    // binding delete 
+    function bindDeleteTask(taskItem, deleteTask) {
+        
+        let deleteBtn = taskItem.querySelector(".delete-btn");
+        deleteBtn.onclick = deleteTask;
 
-    // for default task
+    }
+
+
+    // for default task binding
     bindInComplete(defaultIncTask, completeTask);
     bindEditTask(defaultIncTask, editDisplayPopup);
+    bindDeleteTask(defaultIncTask, deleteTask);
 
 
-
-    displayPopup();
-
-    if(displayPopup) {
+    // add task
+    if(displayPopup()) {
         addTaskBtn.addEventListener("click", addTaskItem);
     }else {
         alert("Open pop-up to add-task");
