@@ -37,7 +37,13 @@ function addTask () {
     // add task item to incomplete list
     let addTaskItem = function (ev) {
         ev.preventDefault();
-        let taskItem = createTask(taskName.value, taskDescription.value);
+        let taskItem = '';
+        if(taskName.value && taskDescription.value) {
+            taskItem = createTask(taskName.value, taskDescription.value);
+        }else {
+            alert("field is empty");
+        }
+        
         incompleteList.appendChild(taskItem);
         taskName.value = "";
         taskDescription.value = "";
