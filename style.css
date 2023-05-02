@@ -26,8 +26,18 @@ body {
     background-color: var(--light-bg);
 }
 
+body.dark {
+    --light-bg: #010103;
+    --black: #fff;
+    --box-shadow: 0px 2px 4px 1px rgba(87, 87, 87, 0.25);
+}
+
 html {
     font-size: 62.5%;
+}
+
+#dark-mode {
+    color: var(--black);
 }
 
 .heading {
